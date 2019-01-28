@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clock - Hasan El Jabir</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+        <script>
+            (()=> {
+                const
+                    secondHand = document.querySelector('.second-hand'),
+                    minuteHand = document.querySelector('.min-hand'),
+                    hourHand = document.querySelector('.hour-hand')
+
+                const calcDegrees = (time, max) => ((time / max) * 360) + 90;
+                setInterval(() => {
+
+                const now = new Date();
+
+                const
+                    secondHandDegrees = calcDegrees(now.getSeconds(), 60),
+                    minuteHandDegrees = calcDegrees(now.getMinutes(), 60),
+                    hourHandDegrees = calcDegrees(now.getHours(), 12);
+
+                secondHand.style.transform = `rotate(${secondHandDegrees}deg)`;
+                minuteHand.style.transform = `rotate(${minuteHandDegrees}deg)`;
+                hourHand.style.transform = `rotate(${hourHandDegrees}deg)`;
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>
