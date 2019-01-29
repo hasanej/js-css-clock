@@ -1,4 +1,4 @@
-# js-css-clock
+# JS CSS Clock
 This repository contains an example of Clock created using Javascript and CSS. The clock will show current time in your machine.
 
 ## Preview
